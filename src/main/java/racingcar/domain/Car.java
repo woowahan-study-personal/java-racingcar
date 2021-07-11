@@ -13,13 +13,6 @@ public class Car {
         this.name = name;
     }
 
-    public Car clone() {
-        Car car = new Car(getName());
-        car.position = getPosition();
-
-        return car;
-    }
-
     private void validateName(String name) {
         if (name == null) {
             throw new IllegalArgumentException("[ERROR]: 이름이 null 인 경우는 허용하지 않습니다.");
