@@ -2,9 +2,7 @@ package racingcar.view;
 
 import java.util.Collections;
 import java.util.List;
-import racingcar.domain.Car;
 import racingcar.dto.CarDTO;
-import racingcar.service.GameService;
 
 public class OutputView {
 
@@ -17,9 +15,9 @@ public class OutputView {
     }
 
     public static void printCurrentGameTurnStatus(List<CarDTO> carDTOList) {
-         for (CarDTO car : carDTOList) {
+        for (CarDTO car : carDTOList) {
             printCarStatus(car);
-         }
+        }
 
         printEmptyNextLine();
     }
@@ -32,5 +30,7 @@ public class OutputView {
         System.out.println("실행 결과");
     }
 
-    public static void printEmptyNextLine() { System.out.println(); }
+    public static void printEmptyNextLine() {
+        System.out.println();
+    }
 }
