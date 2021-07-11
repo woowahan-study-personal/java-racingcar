@@ -14,7 +14,8 @@ public class GameService {
     private CarRepository carRepository;
     private int longestDistanceInMatch = 0;
 
-    private GameService() {}
+    private GameService() {
+    }
 
     public GameService(String[] carNames) {
         carRepository = CarRepository.createGameByCarNameArray(carNames);
@@ -32,7 +33,7 @@ public class GameService {
         return number >= MINIMUM_REQUIREMENT_NUMBER_FOR_CAR_MOVE;
     }
 
-    public void runCarByRandomNumber(Car car) {
+    private void runCarByRandomNumber(Car car) {
         if (isCarMoveAble(GameRandomTool.makeGameRandomNumber())) {
             car.moveCar();
         }
