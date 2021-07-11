@@ -31,8 +31,8 @@ public class StringClassTest {
     @DisplayName("4. 'abc' 가 주어질 때, String의 ??? 메소드를 활용해 특정 위치의 문자를 가져오고 예외처리를 구현")
     void test4() {
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
-                .isThrownBy(() -> {
-                    "abc".charAt(4);
-                }).withMessageMatching("String index out of range: 4");
+            .isThrownBy(() -> {
+                "abc".charAt(4);
+            }).withMessageMatching("String index out of range: 4");
     }
 }
