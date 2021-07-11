@@ -1,7 +1,9 @@
 package racingcar.view;
 
 import java.util.Collections;
+import java.util.List;
 import racingcar.domain.Car;
+import racingcar.dto.CarDTO;
 import racingcar.service.GameService;
 
 public class OutputView {
@@ -9,21 +11,21 @@ public class OutputView {
     private OutputView() {
     }
 
-    private static void printCarStatus(Car car) {
+    private static void printCarStatus(CarDTO car) {
         System.out.println(car.getName() + " : " + String.join("", Collections
             .nCopies(car.getPosition(), "-")));
     }
 
-    public static void printCurrentGameTurnStatus(GameService game) {
-        // for (Car car : game.getCarList()) {
-        //    printCarStatus(car);
-        // }
+    public static void printCurrentGameTurnStatus(List<CarDTO> carDTOList) {
+         for (CarDTO car : carDTOList) {
+            printCarStatus(car);
+         }
 
         printEmptyNextLine();
     }
 
-    public static void printMatchWinner(GameService game) {
-        System.out.println("최종 우승자: " + String.join(", ", game.makeWinnerResult()));
+    public static void printMatchWinner(List<String> winnerList) {
+        System.out.println("최종 우승자: " + String.join(", ", winnerList));
     }
 
     public static void printExecutionResultUIMessage() {
