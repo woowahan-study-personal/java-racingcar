@@ -7,15 +7,19 @@ public class Car {
     public static final int MAX_NAME_LENGTH = 5;
     private final String name;
 
-    public int getPosition() {
-        return position;
-    }
-
     private int position = 0;
 
     public Car(String name) {
         validateName(name);
         this.name = name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public String getName() {
+        return name;
     }
 
     private void validateName(String name) {

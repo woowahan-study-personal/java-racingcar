@@ -30,4 +30,35 @@ public class SystemControllerTest {
         List<Car> carList = systemController.getCarArray("Song,Kim,Park");
         assertThat(carList).contains(new Car(input));
     }
+
+    @DisplayName("최대_포지션_값_구하기")
+    @Test
+    void test3() {
+        SystemController systemController = new SystemController();
+        List<Car> carList = systemController.getCarArray("Song,Kim,Park");
+        for (int i=0; i < 5; i++) {
+            carList.get(0).go(5);
+        }
+        for (int i=0; i < 3; i++) {
+            carList.get(1).go(5);
+        }
+        int maxPosition = systemController.getMaxPosition(carList);
+        assertThat(maxPosition).isEqualTo(5);
+    }
+
+    @DisplayName("우승자 결정")
+    @ParameterizedTest
+    @ValueSource(strings = {"Song", "Kim"})
+    void test4(String input) {
+        SystemController systemController = new SystemController();
+        List<Car> carList = systemController.getCarArray("Song,Kim,Park");
+        for (int i=0; i < 3; i++) {
+            carList.get(0).go(5);
+        }
+        for (int i=0; i < 3; i++) {
+            carList.get(1).go(5);
+        }
+        List<String> winners = systemController.getWinners(carList, systemController.getMaxPosition(carList));
+        assertThat(winners).contains(input);
+    }
 }
