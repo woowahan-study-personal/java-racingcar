@@ -6,6 +6,11 @@ public class Car {
 
     public static final int MAX_NAME_LENGTH = 5;
     private final String name;
+
+    public int getPosition() {
+        return position;
+    }
+
     private int position = 0;
 
     public Car(String name) {
@@ -24,4 +29,15 @@ public class Car {
             throw new IllegalArgumentException("[ERROR] 이름은 빈글자가 아니여야합니다.");
         }
     }
+
+    public void go(int randomNumber) {
+        if (isGo(randomNumber)) {
+            this.position++;
+        }
+    }
+
+    public Boolean isGo(int randomNumber) {
+        return randomNumber >= 4;
+    }
+
 }
