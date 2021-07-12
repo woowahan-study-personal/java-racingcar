@@ -4,10 +4,12 @@ import java.util.Objects;
 
 public class Car {
 
-    public static final int MAX_NAME_LENGTH = 5;
+    private static final int MAX_NAME_LENGTH = 5;
+    private static final String DASH_POSITION = "-";
     private final String name;
 
     private int position = 0;
+    private final StringBuilder dashPosition = new StringBuilder();
 
     public Car(String name) {
         validateName(name);
@@ -16,6 +18,10 @@ public class Car {
 
     public int getPosition() {
         return position;
+    }
+
+    public String getDashPosition() {
+        return dashPosition.toString();
     }
 
     public String getName() {
@@ -37,6 +43,7 @@ public class Car {
     public void go(int randomNumber) {
         if (isGo(randomNumber)) {
             this.position++;
+            dashPosition.append(DASH_POSITION);
         }
     }
 

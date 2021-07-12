@@ -31,7 +31,9 @@ public class CarTest {
         Car car = new Car("Song");
         car.go(4);
         assertThat(car.getPosition()).isEqualTo(1);
+        assertThat(car.getDashPosition()).isEqualTo("-");
         car.go(2);
         assertThat(car.getPosition()).isEqualTo(1);
+        assertThat(car.getDashPosition()).isEqualTo("-");
     }
 }
