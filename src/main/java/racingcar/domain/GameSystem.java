@@ -6,6 +6,7 @@ import java.util.Objects;
 import racingcar.utils.RandomUtils;
 
 public class GameSystem {
+
     private static final int START_RANDOM_NUM = 0;
     private static final int END_RANDOM_NUM = 10;
     private static final int GO_MEASURE = 4;
@@ -23,7 +24,7 @@ public class GameSystem {
         if (Objects.equals(splitCars.length, 0)) {
             throw new IllegalArgumentException("[ERROR] 자동차를 제대로 입력해주세요");
         }
-        for (String carName: splitCars) {
+        for (String carName : splitCars) {
             System.out.println(carName);
             carList.add(new Car(carName));
         }
@@ -36,7 +37,7 @@ public class GameSystem {
 
     public int getMaxPosition(List<Car> carList) {
         int maxPosition = -1;
-        for (Car car: carList) {
+        for (Car car : carList) {
             maxPosition = Math.max(maxPosition, car.getPosition());
         }
         return maxPosition;

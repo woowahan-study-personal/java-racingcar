@@ -30,7 +30,9 @@ public class GameSystemTest {
         GameSystem system = new GameSystem();
         List<Car> carList = system.getCarArray("Song,Kim,Park");
         assertThat(carList).contains(new Car(input));
-        assertThatThrownBy(() -> {List<Car> carList2 = system.getCarArray(",,,");})
+        assertThatThrownBy(() -> {
+            List<Car> carList2 = system.getCarArray(",,,");
+        })
             .isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -39,10 +41,10 @@ public class GameSystemTest {
     void test3() {
         GameSystem system = new GameSystem();
         List<Car> carList = system.getCarArray("Song,Kim,Park");
-        for (int i=0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             carList.get(0).go(5);
         }
-        for (int i=0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             carList.get(1).go(5);
         }
         int maxPosition = system.getMaxPosition(carList);
@@ -55,10 +57,10 @@ public class GameSystemTest {
     void test4(String input) {
         GameSystem system = new GameSystem();
         List<Car> carList = system.getCarArray("Song,Kim,Park");
-        for (int i=0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             carList.get(0).go(5);
         }
-        for (int i=0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             carList.get(1).go(5);
         }
         String winners = system.getWinners(carList, system.getMaxPosition(carList));

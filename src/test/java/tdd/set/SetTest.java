@@ -12,6 +12,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.*;
 
 public class SetTest {
+
     private Set<Integer> numbers;
 
     @BeforeEach
@@ -31,7 +32,7 @@ public class SetTest {
 
     @DisplayName("set_값_확인")
     @ParameterizedTest
-    @ValueSource(ints = {1,2,3})
+    @ValueSource(ints = {1, 2, 3})
     void test2(int input) {
         assertThat(numbers).contains(input);
     }

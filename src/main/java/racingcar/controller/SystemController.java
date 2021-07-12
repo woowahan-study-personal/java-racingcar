@@ -17,7 +17,7 @@ public class SystemController {
         try {
             int trials = InputView.inputTrialNumbers();
             OutputView.printExecutionMessage();
-            for (int i=0; i < trials; i++) {
+            for (int i = 0; i < trials; i++) {
                 playOneTurn(carList);
             }
             OutputView.printWinners(system.getWinners(carList, system.getMaxPosition(carList)));

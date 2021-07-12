@@ -6,6 +6,7 @@ public class Car {
 
     private static final int MAX_NAME_LENGTH = 5;
     private static final String DASH_POSITION = "-";
+    public static final int GO_NUMBER = 4;
     private final String name;
 
     private int position = 0;
@@ -48,13 +49,17 @@ public class Car {
     }
 
     public Boolean isGo(int randomNumber) {
-        return randomNumber >= 4;
+        return randomNumber >= GO_NUMBER;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Car car = (Car) o;
         return Objects.equals(name, car.name) && Objects
             .equals(position, car.position);

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class CarTest {
+
     @DisplayName("자동차_이름_길이_테스트")
     @Test
     void test1() {
