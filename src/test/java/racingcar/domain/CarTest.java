@@ -19,12 +19,12 @@ public class CarTest {
             .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @DisplayName("전진여부_테스트")
-    @Test
-    void test2() {
-        assertThat(new Car("Song").isGo(4)).isTrue();
-        assertThat(new Car("Song").isGo(2)).isFalse();
-    }
+//    @DisplayName("전진여부_테스트")
+//    @Test
+//    void test2() {
+//        assertThat(new Car("Song").isGo(4)).isTrue();
+//        assertThat(new Car("Song").isGo(2)).isFalse();
+//    }
 
     @DisplayName("전진_테스트")
     @Test

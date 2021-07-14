@@ -7,10 +7,8 @@ public class Car {
     private static final int MAX_NAME_LENGTH = 5;
     private static final String DASH_POSITION = "-";
     public static final int GO_NUMBER = 4;
-    private final String name;
-
     private int position = 0;
-    private final StringBuilder dashPosition = new StringBuilder();
+    private final String name;
 
     public Car(String name) {
         validateName(name);
@@ -19,10 +17,6 @@ public class Car {
 
     public int getPosition() {
         return position;
-    }
-
-    public String getDashPosition() {
-        return dashPosition.toString();
     }
 
     public String getName() {
@@ -41,14 +35,13 @@ public class Car {
         }
     }
 
-    public void go(int randomNumber) {
-        if (isGo(randomNumber)) {
+    public void go(int number) {
+        if (isGo(number)) {
             this.position++;
-            dashPosition.append(DASH_POSITION);
         }
     }
 
-    public Boolean isGo(int randomNumber) {
+    private Boolean isGo(int randomNumber) {
         return randomNumber >= GO_NUMBER;
     }
 
