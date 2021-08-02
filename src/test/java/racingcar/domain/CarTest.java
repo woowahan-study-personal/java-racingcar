@@ -23,9 +23,9 @@ public class CarTest {
     @Test
     void test3() {
         Car car = new Car("Song");
-        car.go(4);
+        car.go();
         assertThat(car.getPosition()).isEqualTo(1);
-        car.go(2);
+        car.go();
         assertThat(car.getPosition()).isEqualTo(1);
     }
 }

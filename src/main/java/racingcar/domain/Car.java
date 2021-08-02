@@ -5,7 +5,6 @@ import java.util.Objects;
 public class Car {
 
     private static final int MAX_NAME_LENGTH = 5;
-    public static final int GO_NUMBER = 4;
 
     private int position = 0;
     private final String name;
@@ -35,14 +34,8 @@ public class Car {
         }
     }
 
-    public void go(int number) {
-        if (isGo(number)) {
-            this.position++;
-        }
-    }
-
-    private Boolean isGo(int randomNumber) {
-        return randomNumber >= GO_NUMBER;
+    public void go() {
+        this.position++;
     }
 
     @Override
