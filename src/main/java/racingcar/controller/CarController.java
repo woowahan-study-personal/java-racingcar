@@ -35,5 +35,4 @@ public class CarController {
         }
         OutputView.printNullLine();
     }
-
 }

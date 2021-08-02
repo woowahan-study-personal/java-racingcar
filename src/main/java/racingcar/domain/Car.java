@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Car {
 
     private static final int MAX_NAME_LENGTH = 5;
-    private static final String DASH_POSITION = "-";
     public static final int GO_NUMBER = 4;
+
     private int position = 0;
     private final String name;
 
